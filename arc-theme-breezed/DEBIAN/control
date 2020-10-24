@@ -1,0 +1,10 @@
+Package: arc-theme-breezed
+Version: 1.0.0-1big5
+Depends: arc-theme
+Architecture: all
+Maintainer: Bruno Goncalves <www.biglinux.com.br>
+Section: admin
+Priority: optional
+Installed-Size:220
+Description: Change buttons from arc-theme to Breeze style: minimize, maximize and close buttons
+

@@ -1,0 +1,141 @@
+/* GTK NAMED COLORS
+   ----------------
+   use responsibly! */
+/*
+
+these are pretty self explicative */
+
+@define-color theme_titlebar_foreground_breeze #cccccc;
+
+
+/***************
+ * Header bars *
+ ***************/
+
+  headerbar button {
+	color: @theme_titlebar_foreground_breeze; }
+
+
+/**********************
+ * Window Decorations *
+ *********************/
+
+/**********************
+ * Hide arc icons *
+ *********************/
+
+    headerbar button.titlebutton.close image,
+    .titlebar button.titlebutton.close image,
+	headerbar button.titlebutton.maximize image,
+    .titlebar button.titlebutton.maximize image,
+	headerbar button.titlebutton.minimize image,
+    .titlebar button.titlebutton.minimize image,
+	.titlebar .maximized headerbar button.titlebutton.maximize,
+	.headerbar .maximized headerbar button.titlebutton.maximize,
+	.titlebar .maximized headerbar button.titlebutton.minimize,
+	.headerbar .maximized headerbar button.titlebutton.minimize,
+	.titlebar .maximized headerbar button.titlebutton.close,
+	.headerbar .maximized headerbar button.titlebutton.close{
+		color: transparent;
+}
+
+/***********
+ * Buttons *
+ ***********/
+
+  headerbar button.titlebutton.close,
+  .titlebar button.titlebutton.close,
+  .maximized headerbar button.titlebutton.close,
+  .maximized .titlebar button.titlebutton.close,
+  headerbar button.titlebutton.close:backdrop,
+  .titlebar button.titlebutton.close:backdrop,
+  .maximized headerbar button.titlebutton.close:backdrop,
+  .maximized .titlebar button.titlebutton.close:backdrop{
+    padding: 1px;
+    border-image: none;
+    box-shadow: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: @theme_titlebar_foreground_breeze;
+    background-image: -gtk-recolor(url("/usr/share/themes/Arc-Darker/gtk-3.0/assets-breeze/breeze-close-symbolic.svg")); }
+
+  headerbar button.titlebutton.maximize,
+  .titlebar button.titlebutton.maximize,
+  headerbar button.titlebutton.maximize:backdrop,
+  .titlebar button.titlebutton.maximize:backdrop{
+    padding: 1px;
+    border-image: none;
+    box-shadow: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: @theme_titlebar_foreground_breeze;
+    background-image: -gtk-recolor(url("/usr/share/themes/Arc-Darker/gtk-3.0/assets-breeze/breeze-maximize-symbolic.svg")); }
+
+.maximized headerbar button.titlebutton.maximize, .maximized .titlebar button.titlebutton.maximize {
+  padding: 1px;
+  border-image: none;
+  box-shadow: none;
+  background-position: center;
+  background-repeat: no-repeat;
+    color: @theme_titlebar_foreground_breeze;
+  background-image: -gtk-recolor(url("/usr/share/themes/Arc-Darker/gtk-3.0/assets-breeze/breeze-maximized-symbolic.svg")); }
+
+  headerbar button.titlebutton.minimize,
+  .titlebar button.titlebutton.minimize,
+  .maximized headerbar button.titlebutton.minimize,
+  .maximized .titlebar button.titlebutton.minimize,
+    headerbar button.titlebutton.minimize:backdrop,
+  .titlebar button.titlebutton.minimize:backdrop,
+  .maximized headerbar button.titlebutton.minimize:backdrop,
+  .maximized .titlebar button.titlebutton.minimize:backdrop{
+    padding: 1px;
+    border-image: none;
+    box-shadow: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: @theme_titlebar_foreground_breeze;
+    background-image: -gtk-recolor(url("/usr/share/themes/Arc-Darker/gtk-3.0/assets-breeze/breeze-minimize-symbolic.svg")); }
+
+/*****************
+ * Buttons hover *
+ *****************/
+
+  headerbar button.titlebutton.close:hover,
+  .titlebar button.titlebutton.close:hover,
+  .maximized headerbar button.titlebutton.close:hover,
+  .maximized .titlebar button.titlebutton.close:hover {
+    color: #ffffff;
+    background-image: -gtk-recolor(url("/usr/share/themes/Arc-Darker/gtk-3.0/assets-breeze/breeze-close-hover-symbolic.svg")); }
+    
+      
+  headerbar button.titlebutton.maximize:hover,
+  .titlebar button.titlebutton.maximize:hover {
+    background-image: -gtk-recolor(url("/usr/share/themes/Arc-Darker/gtk-3.0/assets-breeze/breeze-maximize-hover-symbolic.svg")); }
+
+    
+.maximized headerbar button.titlebutton.maximize:hover, .maximized .titlebar button.titlebutton.maximize:hover {
+  color: @theme_titlebar_foreground_breeze;
+  background-image: -gtk-recolor(url("/usr/share/themes/Arc-Darker/gtk-3.0/assets-breeze/breeze-maximized-hover-symbolic.svg")); }
+
+  
+  headerbar button.titlebutton.minimize:hover,
+  .titlebar button.titlebutton.minimize:hover,
+    .maximized headerbar button.titlebutton.minimize:hover,
+  .maximized .titlebar button.titlebutton.minimize:hover {
+    background-image: -gtk-recolor(url("/usr/share/themes/Arc-Darker/gtk-3.0/assets-breeze/breeze-minimize-hover-symbolic.svg")); }
+    
+
+
+/***********************************
+ * Window Decorations Chromium Fix *
+ ***********************************/
+
+  window.background.chromium headerbar button.titlebutton.close,
+  window.background.chromium .titlebar button.titlebutton.close {
+    color: transparent;
+    background-image: -gtk-scaled(url("/usr/share/themes/Arc-Darker/gtk-3.0/assets-breeze/titlebutton-close.png")); }
+    
+    
+    window.background.chromium headerbar button.titlebutton.close:hover,
+    window.background.chromium .titlebar button.titlebutton.close:hover {
+      background-image: -gtk-scaled(url("/usr/share/themes/Arc-Darker/gtk-3.0/assets-breeze/titlebutton-close-hover.png")); }

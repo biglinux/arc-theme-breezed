@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+package_name=arc-theme-breezed
+case "$1" in
+  install)
+    dpkg-divert --package "$package_name" --divert "/usr/share/themes/Arc/gtk-3.0/gtk-orig.css" --rename "/usr/share/themes/Arc/gtk-3.0/gtk.css"
+    dpkg-divert --package "$package_name" --divert "/usr/share/themes/Arc-Dark/gtk-3.0/gtk-orig.css" --rename "/usr/share/themes/Arc-Dark/gtk-3.0/gtk.css"
+    dpkg-divert --package "$package_name" --divert "/usr/share/themes/Arc-Darker/gtk-3.0/gtk-orig.css" --rename "/usr/share/themes/Arc-Darker/gtk-3.0/gtk.css"
+    ;;
+  upgrade)
+if [ "$(dpkg-divert --list "/usr/share/themes/Arc/gtk-3.0/gtk.css")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/themes/Arc/gtk-3.0/gtk-orig.css" --rename "/usr/share/themes/Arc/gtk-3.0/gtk.css"
+fi
+if [ "$(dpkg-divert --list "/usr/share/themes/Arc-Dark/gtk-3.0/gtk.css")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/themes/Arc-Dark/gtk-3.0/gtk-orig.css" --rename "/usr/share/themes/Arc-Dark/gtk-3.0/gtk.css"
+fi
+if [ "$(dpkg-divert --list "/usr/share/themes/Arc-Darker/gtk-3.0/gtk.css")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/themes/Arc-Darker/gtk-3.0/gtk-orig.css" --rename "/usr/share/themes/Arc-Darker/gtk-3.0/gtk.css"
+fi
+;;
+esac
+exit 0
